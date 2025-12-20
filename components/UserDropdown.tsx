@@ -17,7 +17,7 @@ import {
     AvatarImage,
 } from "@/components/ui/avatar"
 import { LogOut } from "lucide-react"
-import NavItems from "@/components/Navitems"
+import NavItems from "@/components/NavItems"
 
 const UserDropdown = ({ user }: {user: User}) => {
     const router = useRouter();
