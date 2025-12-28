@@ -1,6 +1,13 @@
-﻿import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI;
+// Add debug logging
+console.log('=== ENV DEBUG ===');
+console.log('MONGODB_URI from env:', process.env.MONGODB_URI);
+console.log('MONGODB_URI exists?', !!process.env.MONGODB_URI);
+console.log('=================');
+
+// Temporary fallback - remove this later once env works
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://dineshkannan06122025_db_user:TwRBIvIZcNdPbuoc@cluster0.ztpoifo.mongodb.net/?appName=Cluster0';
 
 declare global {
     var mongooseCache: {
@@ -31,7 +38,7 @@ export const connectToDatabase = async () => {
         throw err;
     }
 
-    console.log(`Connected to database ${process.env.NODE_ENV} - ${MONGODB_URI}`);
+    console.log(`Connected to database ${process.env.NODE_ENV}`);
 
     return cached.conn;
 }
