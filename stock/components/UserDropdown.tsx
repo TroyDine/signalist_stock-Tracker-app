@@ -19,14 +19,14 @@ import {
 import { LogOut } from "lucide-react"
 import NavItems from "@/components/Navitems"
 
-const UserDropdown = () => {
+const UserDropdown = ({ user }: {user: User}) => {
     const router = useRouter();
 
-    const handleSignout = async () => {
-        router.push("/sign-in")
-    }
-
-    const user = { name: 'DN', email: 'dinehs@gmail.com' }
+   const handleSignout = async () => {
+    await signOut();
+    router.push("/sign-in")
+}
+   
 
     return (
         <DropdownMenu>
