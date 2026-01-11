@@ -11,7 +11,7 @@ export const transporter = nodemailer.createTransport({
  } 
 })
 
-export const sendWelcomeEmail = async ({ email, name, intro}: WelcomeEmailData) => {
+export const sendWelcomeEmail = async ({ email, name, intro}: any) => {
     const htmlTemplate = WELCOME_EMAIL_TEMPLATE
     .replace('{{name}}',name)
     .replace('{{intro}}',intro);
@@ -45,4 +45,4 @@ export const sendNewsSummaryEmail = async (
     await transporter.sendMail(mailOptions);
 };
 
-)
+
