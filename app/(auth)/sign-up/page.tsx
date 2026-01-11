@@ -18,7 +18,7 @@ const SignUp = () => {
         handleSubmit,
         control,
         formState: { errors, isSubmitting },
-    } = useForm<SignUpFormData>({
+    } = useForm<any>({
         defaultValues: {
             fullName: '',
             email: '',
@@ -31,7 +31,7 @@ const SignUp = () => {
         mode: 'onBlur'
     }, );
 
-    const onSubmit = async (data: SignUpFormData) => {
+    const onSubmit = async (data: any) => {
         try {
             const result = await signUpWithEmail(data);
             if(result.success) router.push('/');
