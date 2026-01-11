@@ -4,7 +4,7 @@ import NavItems from "@/components/Navitems";
 import UserDropdown from "@/components/UserDropdown";
 import {searchStocks} from "@/lib/actions/finnhub.action";
 
-const Header = async ({ user }: { user: User }) => {
+const Header = async ({ user }: { user: any }) => {
     const initialStocks = await searchStocks();
 
     return (
@@ -17,7 +17,7 @@ const Header = async ({ user }: { user: User }) => {
                     <NavItems initialStocks={initialStocks} />
                 </nav>
 
-                <UserDropdown user={user} initialStocks={initialStocks} />
+                <UserDropdown user={user} />
             </div>
         </header>
     )

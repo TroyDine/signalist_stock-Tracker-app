@@ -17,9 +17,10 @@ import {
     AvatarImage,
 } from "@/components/ui/avatar"
 import { LogOut } from "lucide-react"
-import NavItems from "@/components/Navitems"
+import Navitems from "@/components/Navitems"
+import { signOut } from 'better-auth/api'
 
-const UserDropdown = ({ user }: {user: User}) => {
+const UserDropdown = ({ user }: {user: any}) => {
     const router = useRouter();
 
    const handleSignout = async () => {
@@ -69,7 +70,7 @@ const UserDropdown = ({ user }: {user: User}) => {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator className="sm:block bg-gray-600"/>
                 <nav className="sm:hidden">
-                    <NavItems />
+                    <Navitems initialStocks={[]} />
                 </nav>
             </DropdownMenuContent>
         </DropdownMenu>
