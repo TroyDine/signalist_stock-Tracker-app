@@ -9,7 +9,7 @@ import {
   COMPANY_FINANCIALS_WIDGET_CONFIG,
 } from "@/lib/constants";
 
-export default async function StockDetails({ params }: StockDetailsPageProps) {
+export default async function StockDetails({ params }: any) {
   const { symbol } = await params;
   const scriptUrl = `https://s3.tradingview.com/external-embedding/embed-widget-`;
 
