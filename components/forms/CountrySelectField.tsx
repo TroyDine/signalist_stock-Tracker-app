@@ -2,7 +2,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Control, Controller, FieldError } from 'react-hook-form';
+import { Control, Controller, FieldError, FieldErrorsImpl, Merge } from 'react-hook-form';
 import {
     Popover,
     PopoverContent,
@@ -26,7 +26,7 @@ type CountrySelectProps = {
     name: string;
     label: string;
     control: Control<any>;
-    error?: FieldError;
+    error?: Merge<FieldError, FieldErrorsImpl<any>>;
     required?: boolean;
 };
 
@@ -39,7 +39,7 @@ const CountrySelect = ({
 }) => {
     const [open, setOpen] = useState(false);
 
-    
+    // Get country options with flags==
     const countries = countryList().getData();
 
 
@@ -137,7 +137,7 @@ export const CountrySelectField = ({
                     <CountrySelect value={field.value} onChange={field.onChange} />
                 )}
             />
-            {error && <p className='text-sm text-red-500'>{error.message}</p>}
+            {error && <p className='text-sm text-red-500'>{}</p>}
             <p className='text-xs text-gray-500'>
                 Helps us show market data and news relevant to you.
             </p>
