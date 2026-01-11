@@ -2,7 +2,7 @@
 
 import {useForm} from "react-hook-form";
 import {Button} from "@/components/ui/button";
-import InputField from "@/components/forms/InputField";
+import InputField from "@/components/forms/Input";
 import SelectField from "@/components/forms/SelectField";
 import {INVESTMENT_GOALS, PREFERRED_INDUSTRIES, RISK_TOLERANCE_OPTIONS} from "@/lib/constants";
 import {CountrySelectField} from "@/components/forms/CountrySelectField";

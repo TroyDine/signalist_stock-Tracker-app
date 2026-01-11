@@ -2,8 +2,8 @@
 
 import { useForm } from 'react-hook-form';
 import { Button } from '@/components/ui/button';
-import InputField from '@/components/forms/InputField';
 import FooterLink from '@/components/forms/FooterLink';
+import InputField from '@/components/forms/Input';
 import {signInWithEmail, signUpWithEmail} from "@/lib/actions/auth.actions";
 import {toast} from "sonner";
 import {signInEmail} from "better-auth/api";
@@ -15,7 +15,7 @@ const SignIn = () => {
         register,
         handleSubmit,
         formState: { errors, isSubmitting },
-    } = useForm<SignInFormData>({
+    } = useForm<any>({
         defaultValues: {
             email: '',
             password: '',
@@ -23,7 +23,7 @@ const SignIn = () => {
         mode: 'onBlur',
     });
 
-    const onSubmit = async (data: SignInFormData) => {
+    const onSubmit = async (data: any) => {
         try {
             const result = await signInWithEmail(data);
             if(result.success) router.push('/');
